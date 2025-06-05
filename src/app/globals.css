@@ -1,15 +1,18 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-titillium: 'Titillium Web', sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-family: var(--font-titillium);
+  --font-sans: var(--font-titillium);
+  --font-mono: var(--font-titillium);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +22,32 @@
   }
 }
 
+:root {
+  --foreground-rgb: 17, 24, 39;
+  --background-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 243, 244, 246;
+  --background-rgb: 26, 26, 26;
+}
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#mobile-menu.block {
+  max-height: 500px;
+}
+
+@supports (height: 100svh) {
+  .hero-container {
+    height: 64svh; /* Even more reliable than dvh */
+  }
 }
