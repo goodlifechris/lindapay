@@ -51,6 +51,8 @@ export default function Hero() {
     before:transition-transform before:duration-300 before:ease-in-out
     hover:before:scale-x-100
     hover:border-[#d8953a] hover:text-[#d8953a]
+    bg-white
+    z-10
     group
   ">
     <span className="relative z-10">

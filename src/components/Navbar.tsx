@@ -2,16 +2,16 @@
 'use client'
 
 import Link from 'next/link'
-import { useMobileMenu } from '@/hooks/useMobileMenu'
+// import { useMobileMenu } from '@/hooks/useMobileMenu'
 import Image from 'next/image'
 
 export default function Navbar() {
-  const { isOpen, toggleMenu } = useMobileMenu()
+  // const { isOpen, toggleMenu } = useMobileMenu()
 
   return (
     <nav className={`sticky top-0 z-50 backdrop-blur-lg bg-white/70 w-full  border-gray-200 dark:border-gray-700 transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex items-center justify-between h-50">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
         <Link href="/">
@@ -67,7 +67,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="-mr-2 flex md:hidden">
+          {/* <div className="-mr-2 flex md:hidden">
             <button
               type="button"
               onClick={toggleMenu}
@@ -97,12 +97,12 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`} id="mobile-menu">
+      {/* <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`} id="mobile-menu">
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/features"
@@ -152,7 +152,7 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   )
 }

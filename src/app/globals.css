@@ -46,8 +46,35 @@ body {
   max-height: 500px;
 }
 
+/* For modern browsers that support svh units */
 @supports (height: 100svh) {
   .hero-container {
-    height: 64svh; /* Even more reliable than dvh */
+    /* Default height for larger screens */
+    height: 64svh;
+    
+    /* Increase height for smaller screens */
+    @media (max-width: 768px) {
+      height: 75svh;
+    }
+    
+    /* Even taller for very small screens */
+    @media (max-width: 480px) {
+      height: 90vh;
+    }
+  }
+}
+
+/* Fallback for older browsers */
+.hero-container {
+  /* Default height for larger screens */
+  height: 64dvh;
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    height: 75dvh;
+  }
+  
+  @media (max-width: 480px) {
+    height: 90vh;
   }
 }

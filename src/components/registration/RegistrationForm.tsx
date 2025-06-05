@@ -96,26 +96,26 @@ export default function RegistrationForm() {
 
         {/* Terms Checkbox */}
         <div className="mb-6">
-          <label className="flex items-start">
-            <input
-              type="checkbox"
-              name="agreedToTerms"
-              checked={formData.agreedToTerms}
-              onChange={handleChange}
-              className="mt-1 mr-2 rounded text-[#E6A54A] focus:ring-[#E6A54A]"
-              required
-            />
-            <span className="text-sm text-gray-700">
-              I agree to the LindaPay{' '}
-              <Link href="/terms" className="text-[#E6A54A] hover:underline">
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="/privacy" className="text-[#E6A54A] hover:underline">
-                Privacy Policy
-              </Link>
-            </span>
-          </label>
+<label className="flex items-start">
+  <input
+    type="checkbox"
+    name="agreedToTerms"
+    checked={formData.agreedToTerms}
+    onChange={handleChange}
+    className="mt-1 mr-2 h-4 w-4 rounded border-gray-300 text-[#E6A54A] focus:ring-[#E6A54A] checked:bg-[#E6A54A] checked:border-transparent"
+    required
+  />
+  <span className="text-sm text-gray-700">
+    I agree to the LindaPay{' '}
+    <Link href="/terms" className="text-[#E6A54A] hover:underline">
+      Terms of Service
+    </Link>{' '}
+    and{' '}
+    <Link href="/privacy" className="text-[#E6A54A] hover:underline">
+      Privacy Policy
+    </Link>
+  </span>
+</label>
         </div>
 
         {/* Submit Button */}
