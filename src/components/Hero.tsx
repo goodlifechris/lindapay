@@ -26,7 +26,7 @@ const buttonHover = {
 export default function Hero() {
   return (
     <motion.section 
-      className="flex items-center justify-center "
+      className="flex items-center justify-center hero-container"
       initial="hidden"
       animate="show"
       variants={container}

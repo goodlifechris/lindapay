@@ -1,10 +1,16 @@
+"use client"
 import { useState } from 'react';
 import Link from 'next/link';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import flags from 'react-phone-number-input/flags';
+import { useRouter } from 'next/navigation';
+
 
 export default function RegistrationForm() {
+  const router = useRouter();
+
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -31,6 +37,8 @@ const handlePhoneChange = (value?: E164Number) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
+      router.push(`/verify?phone=${encodeURIComponent(formData.phone)}`);
+
     console.log(formData);
   };
 
