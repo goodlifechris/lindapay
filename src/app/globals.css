@@ -78,3 +78,38 @@ body {
     height: 100vh;
   }
 }
+.PhoneInputInput:focus {
+  outline: none;
+  border: none;
+  box-shadow: none; /* Optional: Removes any shadow effects if present */
+}
+
+.PhoneInputCountrySelectArrow {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #e6a54a; /* red-500 */
+  border-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.PhoneInputCountryIcon--border {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0.25rem;
+  box-shadow:none !important;
+}

@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import flags from 'react-phone-number-input/flags';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -17,7 +20,14 @@ export default function RegistrationForm() {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
+  type E164Number = string;
 
+const handlePhoneChange = (value?: E164Number) => {
+  setFormData(prev => ({
+    ...prev,
+    phone: value?.toString() || ''
+  }));
+};
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
@@ -25,7 +35,7 @@ export default function RegistrationForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg border border-gray-200 ">
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg border border-gray-200 justify-center items-center  ">
       <h1 className="text-2xl font-semibold text-gray-800 mb-2">Welcome to LindaPay</h1>
       <p className="text-gray-600 mb-8">Complete the form below to get started with LipaPay</p>
 
@@ -59,20 +69,30 @@ export default function RegistrationForm() {
         </div>
 
         {/* Phone Number */}
-        <div className="mb-6">
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Phone number</label>
-          <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
-            <span className="px-3 py-2 bg-gray-100 text-gray-700">+254</span>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="flex-1 px-4 py-2 focus:ring-2 focus:ring-[#E6A54A] focus:border-transparent focus:outline-none"
-              required
-            />
-          </div>
+            <div className="mb-6">
+        <label className="block text-sm font-semibold text-gray-700 mb-1">
+          Phone number
+        </label>
+        <div className="border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-[#E6A54A]">
+          <PhoneInput
+            international
+            defaultCountry="KE"
+            value={formData.phone}
+          
+            
+            onChange={handlePhoneChange}
+            className="focus:border-0 focus:outline-none w-full px-4 py-2"
+            flagComponent={({ country }) => {
+              const Flag = flags[country];
+              return Flag ? (
+                <span className="w-6 h-4 inline-block mr-2  focus:outline-none">
+                  <Flag title={country} />
+                </span>
+              ) : null;
+            }}
+          />
         </div>
+      </div>
 
         {/* Password Section */}
         <div className="mb-6">
@@ -102,7 +122,8 @@ export default function RegistrationForm() {
     name="agreedToTerms"
     checked={formData.agreedToTerms}
     onChange={handleChange}
-    className="mt-1 mr-2 h-4 w-4 rounded border-gray-300 text-[#E6A54A] focus:ring-[#E6A54A] checked:bg-[#E6A54A] checked:border-transparent"
+      className="mt-1 mr-2 h-4 w-4 rounded appearance-none border-gray-300 text-red-500 focus:ring-red-500 checked:bg-red-500 checked:border-transparent"
+    // className="mt-1 mr-2 h-4 w-4 rounded border-gray-300 text-[#E6A54A] focus:ring-[#E6A54A] checked:bg-[#E6A54A] checked:border-transparent"
     required
   />
   <span className="text-sm text-gray-700">
