@@ -17,7 +17,7 @@ export default function Home() {
       alt="Happy customers"
       width={600}
       height={600}
-      className="w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] h-auto object-contain"
+      className="w-[150px] sm:w-[200px] md:w-[300px] lg:w-[600px] xl:w-[500px] h-auto object-contain"
       priority
     />
   </div>

@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div>
-    <div className="overflow-hidden h-screen"> {/* Prevent scrolling */}
+    <div className=" h-screen justify-center items-center content-center"> {/* Prevent scrolling */}
 
 <RegistrationForm />
     </div>
