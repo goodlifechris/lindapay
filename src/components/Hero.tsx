@@ -22,12 +22,12 @@ export default function Hero() {
         </div>
         
 <div className="flex flex-col sm:flex-row gap-4">
-  <Link href="/signup" className="w-full sm:w-auto">
-
+ <Link href="/signup" className="block z-50">
   <button className="
     relative bg-[#E6A54A] text-white 
     font-medium py-3 px-6 rounded-lg 
     overflow-hidden
+    w-full sm:w-auto  /* Full width on mobile, auto width on sm+ */
     before:content-[''] before:absolute before:top-0 before:left-0 
     before:w-full before:h-full before:bg-[#d8953a]
     before:scale-x-0 before:origin-left
@@ -35,12 +35,11 @@ export default function Hero() {
     hover:before:scale-x-100
     group
   ">
-
     <span className="relative z-10">
       Get Started <span className="ml-1 group-hover:translate-x-1 transition-transform duration-200">▶</span>
     </span>
   </button>
-    </Link>
+</Link>
   <button className="
     relative border-2 border-[#E6A54A] text-[#E6A54A]
     font-medium py-3 px-6 rounded-lg 
@@ -52,10 +51,10 @@ export default function Hero() {
     hover:before:scale-x-100
     hover:border-[#d8953a] hover:text-[#d8953a]
     bg-white
-    z-10
+    z-1000
     group
   ">
-    <span className="relative z-10">
+    <span className="relative">
       Talk To Us Now <span className="ml-1 group-hover:translate-x-1 transition-transform duration-200">▶</span>
     </span>
   </button>
