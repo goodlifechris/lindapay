@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, Suspense } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 export default function VerificationForm() {
@@ -100,7 +100,6 @@ export default function VerificationForm() {
   const formattedTimer = `${Math.floor(timer / 60)}:${(timer % 60).toString().padStart(2, '0')}`;
 
   return (
-        <Suspense fallback={<div>Loading...</div>}>
 
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm">
       <h1 className="text-2xl font-bold text-gray-800 mb-4">Verify your phone number</h1>
@@ -187,6 +186,5 @@ ref={(el) => {
         </div>
       </form>
     </div>
-    </Suspense>
   );
 }
