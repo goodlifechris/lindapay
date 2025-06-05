@@ -1,7 +1,8 @@
 // app/page.tsx
 'use client'
 
-import AccountSetup from "@/components/accountsetup/AccountSetup"
+// import AccountSetup from "@/components/accountsetup/AccountSetup"
+import AccountSetupContainer from "@/components/accountsetup/AccountSetupContainer"
 
 export default function Home() {
 
@@ -9,7 +10,7 @@ export default function Home() {
     <div>
     <div className=" h-screen justify-center items-center content-center"> {/* Prevent scrolling */}
 
-<AccountSetup />
+<AccountSetupContainer />
 
     </div>
 

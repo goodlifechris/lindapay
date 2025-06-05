@@ -2,9 +2,10 @@
 import { useState } from 'react';
 import 'react-phone-number-input/style.css';
 // import { useRouter } from 'next/navigation';
-
-
-export default function PersonalDetails() {
+interface PersonalDetailsProps {
+  setCurrentStep: (step: number) => void;
+}
+export default function PersonalDetails({ setCurrentStep }: PersonalDetailsProps) {
   // const router = useRouter();
 
 
@@ -27,7 +28,7 @@ export default function PersonalDetails() {
     e.preventDefault();
     // Handle form submission
       // router/.push(`/verify?phone=${encodeURIComponent(formData.phone)}`);
-
+ setCurrentStep(1)
     console.log(formData);
   };
 

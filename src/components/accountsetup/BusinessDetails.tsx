@@ -1,9 +1,13 @@
 "use client"
 import { useState } from 'react';
 import 'react-phone-number-input/style.css';
+interface BusinessDetailsProps {
+  setCurrentStep: (step: number) => void;
+}
 
 
-export default function BusinessDetails() {
+export default function BusinessDetails({ setCurrentStep }: BusinessDetailsProps) {
+
 
 
   const [formData, setFormData] = useState({
@@ -24,7 +28,7 @@ export default function BusinessDetails() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-
+setCurrentStep(2)
     console.log(formData);
   };
 
