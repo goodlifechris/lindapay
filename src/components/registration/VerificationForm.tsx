@@ -12,7 +12,7 @@ export default function VerificationForm() {
   const [error, setError] = useState<string | null>(null);
   const [timer, setTimer] = useState(90); // 1:30 in seconds
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
+  const inputsRef = useRef<HTMLElement[]>([]);
 
   // Handle input change
   const handleChange = (index: number, value: string) => {
@@ -112,8 +112,9 @@ export default function VerificationForm() {
           {Array.from({ length: 6 }).map((_, index) => (
             <input
               key={index}
-              ref={(el) => (inputsRef.current[index] = el)}
-              type="text"
+ref={(el) => {
+      if (el) inputsRef.current[index] = el;
+    }}              type="text"
               inputMode="numeric"
               maxLength={1}
               value={code[index]}
